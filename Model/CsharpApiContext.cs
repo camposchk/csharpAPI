@@ -26,20 +26,19 @@ public partial class CsharpApiContext : DbContext
     public virtual DbSet<Store> Stores { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source=CT-C-001L7\\SQLEXPRESS;Initial Catalog=csharpAPI;Integrated Security=True;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ClientOrder>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ClientOr__3214EC276E1AFA39");
+            entity.HasKey(e => e.Id).HasName("PK__ClientOr__3214EC2774625403");
 
             entity.ToTable("ClientOrder");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.DeliveryMoment).HasColumnType("datetime");
-            entity.Property(e => e.Moment).HasColumnType("datetime");
+            entity.Property(e => e.FinishMoment).HasColumnType("datetime");
             entity.Property(e => e.OrderCode)
                 .IsRequired()
                 .HasMaxLength(12)
@@ -54,7 +53,7 @@ public partial class CsharpApiContext : DbContext
 
         modelBuilder.Entity<ClientOrderItem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ClientOr__3214EC272719417F");
+            entity.HasKey(e => e.Id).HasName("PK__ClientOr__3214EC2785B60417");
 
             entity.ToTable("ClientOrderItem");
 
@@ -75,7 +74,7 @@ public partial class CsharpApiContext : DbContext
 
         modelBuilder.Entity<MenuItem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__MenuItem__3214EC2740E3009B");
+            entity.HasKey(e => e.Id).HasName("PK__MenuItem__3214EC27ABDB26E9");
 
             entity.ToTable("MenuItem");
 
@@ -97,7 +96,7 @@ public partial class CsharpApiContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC274F3B2ED2");
+            entity.HasKey(e => e.Id).HasName("PK__Product__3214EC27605CA1B1");
 
             entity.ToTable("Product");
 
@@ -114,7 +113,7 @@ public partial class CsharpApiContext : DbContext
 
         modelBuilder.Entity<Store>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Store__3214EC274B0FF641");
+            entity.HasKey(e => e.Id).HasName("PK__Store__3214EC2719281AE0");
 
             entity.ToTable("Store");
 
