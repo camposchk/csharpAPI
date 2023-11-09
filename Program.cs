@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<CsharpApiContext>();
-builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<CsharpApiContext>();
+builder.Services.AddTransient<IOrderRepository, OrderRepository>();
 
 var app = builder.Build();
 
