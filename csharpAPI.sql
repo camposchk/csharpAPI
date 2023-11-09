@@ -37,7 +37,7 @@ create table ClientOrder(
 	ID int identity primary key,
 	OrderCode varchar(12) not null,
 	StoreID int references Store(ID) not null,
-	Moment datetime not null,
+	FinishMoment datetime null,
 	DeliveryMoment datetime null
 );
 go
@@ -47,3 +47,9 @@ create table ClientOrderItem(
 	ClientOrderID int references ClientOrder(ID) not null,
 	ProductID int references Product(ID) not null
 );
+go
+
+insert Store values 
+	('Mc Curitiba'), 
+	('Mec Errejota'),
+	('Mc SP')

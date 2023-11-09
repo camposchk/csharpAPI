@@ -1,4 +1,5 @@
 using csharpAPI.Model;
+using csharpAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<CsharpApiContext>();
+builder.Services.AddSingleton<IOrderRepository, OrderRepository>();
 
 var app = builder.Build();
 

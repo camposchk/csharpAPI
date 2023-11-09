@@ -73,27 +73,27 @@ public class OrderRepository : IOrderRepository
 
     public Task DeliveryOrder(int orderId)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Task FinishOrder(int orderId)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Task<List<Product>> GetMenu(int orderId)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Task<List<Product>> GetOrderItems(int orderId)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Task RemoveItem(int orderId, int productId)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     private async Task <ClientOrder> GetOrder(int orderId)
